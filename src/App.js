@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Route} from 'react-router-dom'
+import * as BooksAPI from './BooksAPI'
+import './App.css'
+import ListShelfs from './ListShelfs'
+import SearchBooks from './SearchBooks'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class BooksApp extends React.Component {
+  state = {
+    books:[],
+  }
+  componentDidMount(){
+    BooksAPI.getAll()
+            .then((books) => {
+              this.setState(()=> ({
+                books: books
+              }))
+            })
+  }
+  
+  updateShelf = (book,shelf) => {
+    BooksAPI.update(book,shelf);
+    if(shelf === 'none'){
+      this.setState((prevState) => ({
+        books: prevState.books.filter((b) => b.id !== book.id)
+      }))
+    }else{
+      book.shelf = shelf;
+      this.setState((prevState)=> ({
+        books: prevState.books.filter((b) => b.id !== book.id).concat(book)
+      }))
+    }
+  }
+  render() {
+    return (
+      <div className="app">
+          <div className="list-books">
+            <Route exact path='/' render={() => (
+              <div>
+                <div className="list-books-title">
+                  <h1>Books</h1>
+                </div>
+                <ListShelfs books={this.state.books} updateShelf={this.updateShelf}/>
+              </div>
+      )}/>
+            <Route path='/searchBooks' render={() => (
+              <SearchBooks shelfBooks={this.state.books} updateShelf={this.updateShelf}/>
+            )}/>
+          </div>   
+      </div>
+    )
+  }
 }
 
-export default App;
+export default BooksApp
