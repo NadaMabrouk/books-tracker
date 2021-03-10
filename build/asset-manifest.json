@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/books-tracker/static/css/main.a75ad32d.chunk.css",
+    "main.js": "/books-tracker/static/js/main.6a571c9f.chunk.js",
+    "main.js.map": "/books-tracker/static/js/main.6a571c9f.chunk.js.map",
+    "runtime-main.js": "/books-tracker/static/js/runtime-main.c30c1df0.js",
+    "runtime-main.js.map": "/books-tracker/static/js/runtime-main.c30c1df0.js.map",
+    "static/js/2.72b5f7c2.chunk.js": "/books-tracker/static/js/2.72b5f7c2.chunk.js",
+    "static/js/2.72b5f7c2.chunk.js.map": "/books-tracker/static/js/2.72b5f7c2.chunk.js.map",
+    "index.html": "/books-tracker/index.html",
+    "static/css/main.a75ad32d.chunk.css.map": "/books-tracker/static/css/main.a75ad32d.chunk.css.map",
+    "static/js/2.72b5f7c2.chunk.js.LICENSE.txt": "/books-tracker/static/js/2.72b5f7c2.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/books-tracker/static/media/arrow-drop-down.98ef3b31.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c30c1df0.js",
+    "static/js/2.72b5f7c2.chunk.js",
+    "static/css/main.a75ad32d.chunk.css",
+    "static/js/main.6a571c9f.chunk.js"
+  ]
+}

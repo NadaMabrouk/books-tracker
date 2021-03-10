@@ -1,8 +1,8 @@
 {
+  "homepage": "http://NadaMabrouk.github.io/books-tracker",
   "name": "books-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://NadaMabrouk.github.io/react-gh-pages",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
